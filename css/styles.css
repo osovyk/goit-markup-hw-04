@@ -6,14 +6,12 @@
     /* Colors */
     --iris: rgb(77, 90, 229); /* #4d5ae5 */
     --ocean: rgb(64, 75, 191); /* #404bbf */
-    --navy-blue: rgb(46, 47, 66); /* #2e2f42 */
     --green: rgb(49, 208, 170); /* #31d0aa */
     --slate: rgb(67, 68, 85); /* #434455 */
     --light-slate: rgb(142, 143, 153); /* #8e8f99 */
     --cornflower: rgb(231, 233, 252); /* #e7e9fc */
     --cloud: rgb(244, 244, 253); /* #f4f4fd */
-    --navy-blue-modal: rgba(46, 47, 66, 0.4);
-    --grey: rgb(46, 47, 66);
+    --grey: rgb(46, 47, 66); /* #2E2F42B2 */
     --white: rgb(255, 255, 255); /* #fff */
     --dairy: rgb(252, 252, 252); /* #fcfcfc */
 
@@ -50,12 +48,14 @@ ul, ol, li, dl, dt, dd, p, a {
 a {
     text-decoration: none;
     color: currentColor;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
     all: unset;
     font-family: inherit;
     cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 address {
@@ -89,7 +89,7 @@ body {
     font-weight: 700;
     font-size: 36px;
     line-height: 1.11;
-    color: var(--navy-blue);
+    color: var(--grey);
     letter-spacing: 0.02em;
     text-align: center;
     text-transform: capitalize;
@@ -101,7 +101,7 @@ body {
     line-height: 1.2;
     font-weight: 500;
     letter-spacing: 0.02em;
-    color: var(--navy-blue);
+    color: var(--grey);
     margin-bottom: 8px;
 }
 
@@ -130,6 +130,30 @@ body {
     overflow: hidden;
 }
 
+.social-media-list {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+}
+
+.social-media-link {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px transparent;
+    background-color: var(--iris);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-media-link:hover {
+    background-color: var(--green);
+}
+
+.social-icon {
+    fill: var(--white);
+}
+
 /* HEADER */
 .header {
     border-bottom: 1px solid var(--cornflower);
@@ -155,7 +179,7 @@ body {
 }
 
 .dark-logo {
-    color: var(--navy-blue);
+    color: var(--grey);
 }
 
 .nav {
@@ -169,7 +193,7 @@ body {
 }
 
 .nav-link {
-    color: var(--navy-blue);
+    color: var(--grey);
     font-weight: 500;
     padding: 24px 0;
 }
@@ -180,6 +204,19 @@ body {
 .contact-link:hover,
 .contact-link:focus {
     color: var(--ocean);
+}
+
+.active {
+    color: var(--ocean);
+}
+
+.active::after {
+    content: "";
+    display: block;
+    width: 48px;
+    height: 4px;
+    border-radius: 2px;
+    background: currentColor;
 }
 
 .contact-list {
@@ -194,8 +231,13 @@ body {
 
 /* HERO */
 .hero {
-    background-color: var(--navy-blue);
     padding: 188px 0;
+    background-color: rgba(46, 47, 66, 70%);
+    background-image: linear-gradient(to bottom, rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url("./../images/hero-background-image.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: max(1440px);
 }
 
 .hero-title {
@@ -227,6 +269,14 @@ body {
 .hero-btn:hover, .hero-btn:focus {
     background-color: var(--ocean);
 }
+/*APPROACH*/
+.approach-image-box {
+    background-color: var(--cloud);
+    border-radius: 4px;
+    border: 1px solid var(--light-slate);
+    padding: 24px 100px;
+    margin-bottom: 8px;
+}
 
 /* OUR TEAM */
 .team {
@@ -236,6 +286,10 @@ body {
 .team-member {
     border-radius: 0 0 4px 4px;
     box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
+}
+
+.team-role {
+    margin-bottom: 8px;
 }
 
 .team-member-content {
@@ -266,9 +320,17 @@ body {
 .footer {
     padding: 100px 0;
     min-height: 312px;
-    background-color: var(--navy-blue);
+    background-color: var(--grey);
 }
 
+.footer .container {
+    display: flex;
+    gap: 120px;
+}
+
+.footer-site-info {
+    max-width: 264px;
+}
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
@@ -277,3 +339,11 @@ body {
 .light-logo, .footer-text {
     color: var(--cloud);
 }
+
+.footer-section-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 16px;
+}
+
