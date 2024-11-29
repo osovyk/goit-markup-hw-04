@@ -48,14 +48,12 @@ ul, ol, li, dl, dt, dd, p, a {
 a {
     text-decoration: none;
     color: currentColor;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 button {
     all: unset;
     font-family: inherit;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 address {
@@ -132,8 +130,9 @@ body {
 
 .social-media-list {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     justify-content: center;
+    margin: 0 auto;
 }
 
 .social-media-link {
@@ -145,18 +144,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1)
 }
-.social-media-link:hover {
-    background-color: var(--green);
+.social-media-link:hover, .social-media-link:focus {
+    background-color: var(--ocean);
 }
 
 .social-icon {
-    fill: var(--white);
+    fill: var(--cloud);
 }
 
 /* HEADER */
 .header {
     border-bottom: 1px solid var(--cornflower);
+    box-shadow: 0 2px 1px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16), 0 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .header .container {
@@ -196,6 +197,8 @@ body {
     color: var(--grey);
     font-weight: 500;
     padding: 24px 0;
+    position: relative;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover,
@@ -213,10 +216,13 @@ body {
 .active::after {
     content: "";
     display: block;
-    width: 48px;
+    width: 100%;
     height: 4px;
     border-radius: 2px;
     background: currentColor;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
 }
 
 .contact-list {
@@ -227,6 +233,7 @@ body {
 
 .contact-link {
     color: var(--slate);
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* HERO */
@@ -237,7 +244,9 @@ body {
             url("./../images/hero-background-image.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: max(1440px);
+    background-size: cover;
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
 .hero-title {
@@ -264,6 +273,7 @@ body {
     min-width: 169px;
     height: 56px;
     margin: 0 auto;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover, .hero-btn:focus {
@@ -271,10 +281,13 @@ body {
 }
 /*APPROACH*/
 .approach-image-box {
+    height: 112px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: var(--cloud);
     border-radius: 4px;
     border: 1px solid var(--light-slate);
-    padding: 24px 100px;
     margin-bottom: 8px;
 }
 
@@ -302,6 +315,14 @@ body {
 .portfolio-list {
     --items: 3;
     row-gap: calc(var(--col-gap) * 2);
+}
+
+.portfolio-item {
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.portfolio-item:hover {
+    box-shadow: 0 1px 6px rgba(46, 47, 66, 0.08), 0 1px 1px rgba(46, 47, 66, 0.16), 0 2px 1px rgba(46, 47, 66, 0.08);
 }
 
 .portfolio-content {
@@ -345,5 +366,9 @@ body {
     font-weight: 500;
     color: var(--white);
     margin-bottom: 16px;
+}
+
+.footer .social-media-list {
+    gap: 16px;
 }
 

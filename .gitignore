@@ -62,4 +62,3 @@ coverage/
 .idea/libraries/
 .idea/*.ipr
 .idea/artifacts/
-out/
