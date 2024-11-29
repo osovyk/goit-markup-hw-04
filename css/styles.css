@@ -273,7 +273,7 @@ body {
     min-width: 169px;
     height: 56px;
     margin: 0 auto;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-btn:hover, .hero-btn:focus {
@@ -346,12 +346,14 @@ body {
 
 .footer .container {
     display: flex;
-    gap: 120px;
+    align-items: baseline;
 }
 
 .footer-site-info {
     max-width: 264px;
+    margin-right: 120px;
 }
+
 .footer-logo {
     display: inline-block;
     margin-bottom: 16px;
@@ -368,7 +370,11 @@ body {
     margin-bottom: 16px;
 }
 
-.footer .social-media-list {
+.footer-social-media-list {
     gap: 16px;
+}
+
+.footer-social-media-link:hover, .footer-social-media-link:focus {
+    background-color: var(--green);
 }
 
